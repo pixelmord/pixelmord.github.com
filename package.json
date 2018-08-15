@@ -1,16 +1,17 @@
 {
-  "name": "gatsby-starter-typescript",
-  "description": "Gatsby TypeScript starter",
+  "name": "gpixelmord-github-page",
+  "description": "Gatsby TypeScript",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Andreas Sahle",
   "dependencies": {
-    "@types/node": "^8.0.7",
-    "@types/react": "15.0.21",
-    "@types/react-dom": "0.14.23",
-    "gatsby": "^1.9.119",
-    "gatsby-link": "^1.6.28",
-    "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-typescript": "^1.4.10"
+    "@types/node": "^10.7.0",
+    "@types/react": "^16.4.10",
+    "@types/react-dom": "^16.0.7",
+    "gatsby": "^1.9.277",
+    "gatsby-link": "^1.6.46",
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-typescript": "^1.4.20",
+    "react-helmet": "^5.2.0"
   },
   "keywords": [
     "gatsby, typescript"
@@ -24,7 +25,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.8.2"
+    "prettier": "^1.14.2"
   },
   "contributors": [
     "fabien0102 <fabien0102@gmail.com>",
