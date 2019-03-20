@@ -1,5 +1,8 @@
 import * as React from 'react';
+import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
+
+import Layout from '../components/Layout';
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
@@ -19,7 +22,7 @@ export default class extends React.Component<IndexPageProps, {}> {
   }
   public render() {
     return (
-      <div>
+      <Layout>
         <h2>I am a web worker, maker and love to cook.</h2>
         <p>
           This site was built with help of the amazing{' '}
@@ -36,13 +39,13 @@ export default class extends React.Component<IndexPageProps, {}> {
             />
           </a>
         </p>
-      </div>
+      </Layout>
     );
   }
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query {
     site {
       siteMetadata {
         title
