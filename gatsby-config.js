@@ -1,7 +1,11 @@
 require('dotenv').config();
+
+const config = require('./config')
+
 module.exports = {
   siteMetadata: {
-    title: `Andreas Sahle - @pixelmord`
+    title: config.siteTitle,
+    siteUrl: config.siteUrl + config.pathPrefix
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

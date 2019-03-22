@@ -8,5 +8,6 @@ public/
 yarn-error.log
 
 # environment vars
+.env
 .env.development
 .env.production

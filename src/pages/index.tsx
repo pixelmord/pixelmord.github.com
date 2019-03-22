@@ -23,7 +23,7 @@ export default class extends React.Component<IndexPageProps, {}> {
   public render() {
     return (
       <Layout>
-        <h2>I am a web worker, maker and love to cook.</h2>
+        <h2>I am a web worger, maker and love to cook.</h2>
         <p>
           This site was built with help of the amazing{' '}
           <a href="https://www.gatsbyjs.org/">
