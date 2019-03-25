@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import Link from 'gatsby-link';
 
 import Layout from '../components/Layout';
 
@@ -22,8 +21,8 @@ export default class extends React.Component<IndexPageProps, {}> {
   }
   public render() {
     return (
-      <Layout>
-        <h2>I am a web worger, maker and love to cook.</h2>
+      <Layout landingPage={true}>
+
         <p>
           This site was built with help of the amazing{' '}
           <a href="https://www.gatsbyjs.org/">

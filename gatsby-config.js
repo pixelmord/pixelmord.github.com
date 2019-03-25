@@ -26,6 +26,14 @@ module.exports = {
         watchMode: true,
         token: process.env.SANITY_TOKEN
       }
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
     }
   ]
 };

@@ -11,3 +11,5 @@ yarn-error.log
 .env
 .env.development
 .env.production
+
+src/styles/style.scss
