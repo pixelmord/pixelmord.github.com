@@ -23,10 +23,12 @@
     "gatsby-source-sanity": "^2.0.1",
     "gh-pages": "^2.0.1",
     "modern-normalize": "^0.5.0",
+    "polished": "^3.1.0",
     "prestyled": "^0.3.9",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-particles-js": "^2.5.1",
     "typeface-lato": "^0.0.54"
   },
   "keywords": [

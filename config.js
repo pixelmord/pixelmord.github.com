@@ -4,11 +4,13 @@ module.exports = {
   siteTitle: 'Andreas Sahle - @pixelmord', // Navigation and Site Title
   siteTitleAlt: 'Andreas Sahle', // Alternative Site title for SEO
   siteTitleShort: 'Andreas Sahle', // short_name for manifest
-  siteHeadline: 'I am a web worker, lead frontend developer, tech lead and team lead', // Headline for schema.org JSONLD
+  siteHeadline:
+    'My name is Andreas Sahle. I am a lead frontend engineer, tech lead and speaker based in Munich, Germany.', // Headline for schema.org JSONLD
   siteUrl: 'https://pixelmord.de', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logo.png', // Used for SEO and manifest
-  siteDescription: 'I am a web worker, lead frontend developer, tech lead and team lead',
+  siteDescription:
+    'My name is Andreas Sahle. I am a lead frontend engineer, tech lead and speaker based in Munich, Germany.',
   author: 'Andreas Sahle', // Author for schema.org JSONLD
   userTwitter: '@pixelmord', // Twitter Username
   googleAnalyticsID: 'UA-68678396-1',

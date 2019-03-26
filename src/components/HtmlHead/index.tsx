@@ -2,7 +2,7 @@ import * as React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
 import * as config from '../../../config';
-import {withTheme} from 'emotion-theming'
+import { withTheme } from 'emotion-theming';
 
 import { Theme } from 'prestyled';
 
@@ -90,7 +90,7 @@ const Head: React.FC<IHead> = (props: IHead) => {
     name: 'Breadcrumbs',
     itemListElement,
   };
-  console.log(theme)
+  console.log(theme);
   return (
     <Helmet>
       <html lang={config.siteLanguage} />
@@ -110,7 +110,10 @@ const Head: React.FC<IHead> = (props: IHead) => {
       />
       <meta name="gatsby-starter" content="Gatsby Starter Portfolio Cara" />
       <link rel="shortcut icon" href="favicon.ico" />
-      <meta name="msapplication-TileColor" content={theme.colors.msAppTileColor} />
+      <meta
+        name="msapplication-TileColor"
+        content={theme.colors.msAppTileColor}
+      />
       <meta name="msapplication-config" content="browserconfig.xml" />
       <meta name="description" content={description} />
       <meta name="image" content={image} />

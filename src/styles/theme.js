@@ -6,8 +6,14 @@ export const fonts = {
 };
 
 const colors = {
-  primary: '#d20068',
-}
+  primaryDarkest: '#012949',
+  primaryDarker: '#024376',
+  primaryDark: '#035CA3',
+  primary: '#0476D0',
+  primaryLight: '#088FFA',
+  primaryLighter: '#35A4FB',
+  primaryLightest: '#62B8FC',
+};
 
 export const theme = {
   ...defaultTheme,
@@ -46,4 +52,4 @@ export const theme = {
       fontFamily: fonts.headline,
     },
   },
-}
+};
