@@ -1,30 +1,11 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import styled from '@emotion/styled';
+import { textAlign, textStyle, space } from 'styled-system';
 
 import Layout from '../components/Layout';
 import { Container } from '../components/Layout/Container';
 import { PostTeaser } from '../components/Blog/PostTeaser';
-// Please note that you can use https://github.com/dotansimha/graphql-code-generator
-// to generate all types from graphQL schema
-
-const Index: React.FC = (props: any) => {
-  const {
-    data: {
-      allSanityPost: { nodes },
-    },
-  } = props;
-  return (
-    <Layout landingPage={true}>
-      <Container>
-        {nodes.map((post: any) => (
-          <PostTeaser post={post} key={post._id} />
-        ))}
-      </Container>
-    </Layout>
-  );
-};
-
-export default Index;
 
 export const pageQuery = graphql`
   query {
@@ -56,3 +37,19 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const Blog = ({
+  data: {
+    allSanityPost: { nodes },
+  },
+}: any) => (
+  <Layout landingPage={false}>
+    <Container>
+      {nodes.map((post: any) => (
+        <PostTeaser post={post} key={post._id} />
+      ))}
+    </Container>
+  </Layout>
+);
+
+export default Blog;
