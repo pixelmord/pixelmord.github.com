@@ -1,207 +1,26 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
-import { Box, Flex, Text } from 'prestyled';
-import { textAlign, textStyle, space } from 'styled-system';
-import Particles from 'react-particles-js';
+import { Text } from 'prestyled';
 import 'typeface-lato';
 import 'modern-normalize';
 
 import HtmlHead from '../HtmlHead';
 import { GlobalStyle } from '../../styles';
-import andreassahle from '../gfx/andreas_sahle.png';
-import Logo from '../gfx/AndreasSahle.inline.svg';
 
 import { Container } from './Container';
-import { Avatar } from './Avatar';
 import { PageOverlay } from './PageOverlay';
 import { Page } from './Page';
 import { PageSidebar } from './PageSidebar';
-
-const Header = styled(Box)`
-  border-bottom: 1px solid #e5e7e9;
-`.withComponent('header');
-
-const HeroLead = styled('h2')`
-  ${textStyle}
-  ${textAlign}
-  ${space}
-`;
-const HeroHeadline = styled('h1')`
-  ${textStyle}
-  ${textAlign}
-  ${space}
-`;
-
-const PageHeader: React.FC<{
-  landingPage: boolean;
-  sidebarVisible: boolean;
-  setSidebarVisibility: (visible: boolean) => void;
-}> = props => {
-  const { landingPage } = props;
-  return (
-    <Header
-      bg="grayLighter"
-      mb={[2, 4]}
-      px={[2, 3]}
-      py={[1, 2]}
-      position="relative"
-      {...props}
-    >
-      <Flex>
-        <Logo />
-      </Flex>
-      {landingPage === true && (
-        <>
-          <Particles
-            width="100%"
-            height="100%"
-            css={css`
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              z-index: 0;
-            `}
-            params={{
-              particles: {
-                number: {
-                  value: 80,
-                  density: {
-                    enable: true,
-                    value_area: 700,
-                  },
-                },
-                color: {
-                  value: '#779fbd',
-                },
-                shape: {
-                  type: 'circle',
-                  stroke: {
-                    width: 0,
-                    color: '#000000',
-                  },
-                  polygon: {
-                    nb_sides: 5,
-                  },
-                },
-                opacity: {
-                  value: 0.5,
-                  random: false,
-                  anim: {
-                    enable: false,
-                    speed: 1,
-                    opacity_min: 0.1,
-                    sync: false,
-                  },
-                },
-                size: {
-                  value: 3,
-                  random: true,
-                  anim: {
-                    enable: false,
-                    speed: 40,
-                    size_min: 0.1,
-                    sync: false,
-                  },
-                },
-                line_linked: {
-                  enable: true,
-                  distance: 150,
-                  color: '#779fbd',
-                  opacity: 0.4,
-                  width: 1,
-                },
-                move: {
-                  enable: true,
-                  speed: 6,
-                  direction: 'none',
-                  random: false,
-                  straight: false,
-                  out_mode: 'out',
-                  bounce: false,
-                  attract: {
-                    enable: false,
-                    rotateX: 600,
-                    rotateY: 1200,
-                  },
-                },
-              },
-              interactivity: {
-                detect_on: 'canvas',
-                events: {
-                  onhover: {
-                    enable: true,
-                    mode: 'grab',
-                  },
-                  onclick: {
-                    enable: true,
-                    mode: 'push',
-                  },
-                  resize: true,
-                },
-                modes: {
-                  grab: {
-                    distance: 140,
-                    line_linked: {
-                      opacity: 1,
-                    },
-                  },
-                  bubble: {
-                    distance: 400,
-                    size: 40,
-                    duration: 2,
-                    opacity: 8,
-                    speed: 3,
-                  },
-                  repulse: {
-                    distance: 200,
-                    duration: 0.4,
-                  },
-                  push: {
-                    particles_nb: 4,
-                  },
-                  remove: {
-                    particles_nb: 2,
-                  },
-                },
-              },
-              retina_detect: true,
-            }}
-            style={{
-              position: 'absolute',
-              top: '0',
-              left: '0',
-              right: '0',
-              bottom: '0',
-              zIndex: '0',
-            }}
-          />
-          <Container mt={5} position="relative">
-            <Box width={130} ml="auto" mr="auto" mb={4}>
-              <Avatar src={andreassahle} alt="Andreas Sahle" />
-            </Box>
-            <HeroLead textStyle="h2" textAlign="center" mb={[2]}>
-              Nice to meet you!
-            </HeroLead>
-            <HeroHeadline textStyle="h6" textAlign="center">
-              My name is Andreas Sahle. I'm a lead frontend engineer, tech lead
-              and speaker based in Munich, Germany.
-            </HeroHeadline>
-          </Container>
-        </>
-      )}
-    </Header>
-  );
-};
+import { PageHeader } from './PageHeader';
+import { SocialLinks } from './SocialLinks';
 
 const PageFooter = styled('footer')`
   padding-bottom: ${props => props.theme.space[2]};
   padding-top: ${props => props.theme.space[2]};
   margin-top: ${props => props.theme.space[4]};
-  color: ${props => props.theme.colors.grayDark};
+  color: ${props => props.theme.colors.grayDarker};
 `;
+
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   children: any;
 }
@@ -209,6 +28,10 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
 const Layout: React.FC<{ landingPage: boolean }> = props => {
   const { children, landingPage } = props;
   const [sidebarVisible, setSidebarVisibility] = React.useState(false);
+  const toggleSidebar = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    setSidebarVisibility(!sidebarVisible);
+  };
   return (
     <React.Fragment>
       <GlobalStyle />
@@ -223,6 +46,7 @@ const Layout: React.FC<{ landingPage: boolean }> = props => {
         {children}
         <PageFooter>
           <Container>
+            <SocialLinks />
             <Text textAlign="center">
               This site was built with help of the amazing{' '}
               <a href="https://www.gatsbyjs.org/">
@@ -241,8 +65,11 @@ const Layout: React.FC<{ landingPage: boolean }> = props => {
           </Container>
         </PageFooter>
       </Page>
-      <PageOverlay sidebarVisible={sidebarVisible} />
-      <PageSidebar sidebarVisible={sidebarVisible} />
+      <PageOverlay sidebarVisible={sidebarVisible} onClick={toggleSidebar} />
+      <PageSidebar
+        sidebarVisible={sidebarVisible}
+        setSidebarVisibility={setSidebarVisibility}
+      />
     </React.Fragment>
   );
 };

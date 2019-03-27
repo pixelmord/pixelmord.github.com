@@ -11,6 +11,24 @@ export const GlobalStyle: React.FC<{}> = withTheme(props => {
       line-height: ${theme.lineHeights.standard};
       background: ${theme.colors.white};
     }
+    a {
+      color: ${theme.colors.primary};
+      transition: color 0.3s ease;
+      :hover {
+        color: ${theme.colors.primaryDark};
+      }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
   `;
   return <Global styles={styles(props.theme)} />;
 });

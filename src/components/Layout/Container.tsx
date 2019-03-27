@@ -1,8 +1,11 @@
 import * as React from 'react';
-import { Box, IBoxProps } from 'prestyled';
+import styled from '@emotion/styled';
+import { Box } from 'prestyled';
 
-export const Container: React.FC<IBoxProps> = ({ children, ...rest }) => (
-  <Box maxWidth={['100%', 720]} ml="auto" mr="auto" {...rest}>
-    {children}
-  </Box>
-);
+export const Container = styled(Box)``;
+
+Container.defaultProps = {
+  maxWidth: ['100%', '45rem'],
+  mx: 'auto',
+  px: [2, 0],
+};

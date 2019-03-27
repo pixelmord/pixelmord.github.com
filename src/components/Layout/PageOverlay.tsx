@@ -4,7 +4,7 @@ import { Theme } from 'prestyled';
 
 export const PageOverlay: StyledComponent<
   React.PropsWithoutRef<JSX.IntrinsicElements['div']>,
-  { sidebarVisible: boolean },
+  { sidebarVisible: boolean; },
   Theme
 > = styled('div')`
   background-color: rgba(255, 255, 255, 0.75);

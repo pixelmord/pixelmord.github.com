@@ -90,7 +90,7 @@ const Head: React.FC<IHead> = (props: IHead) => {
     name: 'Breadcrumbs',
     itemListElement,
   };
-  console.log(theme);
+
   return (
     <Helmet>
       <html lang={config.siteLanguage} />
