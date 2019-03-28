@@ -36,7 +36,7 @@ export const SocialLinks: React.FC = props => {
   `;
   Link.defaultProps = {
     target: '_blank',
-    rel: 'no-referrer',
+    rel: 'noreferrer',
   };
   return (
     <Box {...props} my={[2, 4]} textAlign="center">
