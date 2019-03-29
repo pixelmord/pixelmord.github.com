@@ -12,16 +12,7 @@ export const query = graphql`
   query($slug: String) {
     sanityPost(slug: { current: { eq: $slug } }) {
       title
-      body {
-        _key
-        _type
-        style
-        children {
-          _key
-          _type
-          text
-        }
-      }
+      _rawBody
       heroImage {
         asset {
           fluid(maxWidth: 1080) {
@@ -65,7 +56,9 @@ export default ({ data }: any) => (
             alt={data.sanityPost.title}
           />
         )}
-        <BlockContent blocks={data.sanityPost.body} />
+        <BlockContent blocks={data.sanityPost._rawBody} />
+        <br />
+        <br />
         <Link to="/blog">Back to blog overview</Link>
       </article>
     </Container>
