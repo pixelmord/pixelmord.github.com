@@ -22,6 +22,7 @@ export const SocialLinks: React.FC = props => {
     color: ${props => props.theme.colors.text};
     margin-left: 0.25em;
     margin-right: 0.25em;
+    margin-bottom: 0.35em;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
     :hover,

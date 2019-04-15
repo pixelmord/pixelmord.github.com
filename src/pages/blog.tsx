@@ -6,37 +6,7 @@ import { textAlign, textStyle, space } from 'styled-system';
 import Layout from '../components/Layout';
 import { Container } from '../components/Layout/Container';
 import { PostTeaser } from '../components/Blog/PostTeaser';
-
-export const pageQuery = graphql`
-  query {
-    allSanityPost(sort: { fields: _createdAt }) {
-      nodes {
-        _id
-        title
-        body {
-          _key
-          _type
-          style
-          children {
-            _key
-            _type
-            text
-          }
-        }
-        slug {
-          current
-        }
-        heroImage {
-          asset {
-            fluid(maxWidth: 150) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+import { SectionTitle } from '../components/typography/SectionTitle';
 
 const Blog = ({
   data: {
@@ -45,6 +15,7 @@ const Blog = ({
 }: any) => (
   <Layout landingPage={false}>
     <Container>
+      <SectionTitle>Latest Articles</SectionTitle>
       {nodes.map((post: any) => (
         <PostTeaser post={post} key={post._id} />
       ))}
@@ -53,3 +24,13 @@ const Blog = ({
 );
 
 export default Blog;
+
+export const pageQuery = graphql`
+  query {
+    allSanityPost(sort: { fields: _createdAt }) {
+      nodes {
+        ...PostFragment
+      }
+    }
+  }
+`;

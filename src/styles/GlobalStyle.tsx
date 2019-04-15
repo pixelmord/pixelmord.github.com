@@ -29,6 +29,10 @@ export const GlobalStyle: React.FC<{}> = withTheme(props => {
         text-decoration: none;
       }
     }
+    p {
+      margin-top: 0;
+      margin-bottom: 0.6em;
+    }
   `;
   return <Global styles={styles(props.theme)} />;
 });

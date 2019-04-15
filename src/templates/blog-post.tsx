@@ -7,7 +7,7 @@ import BlockContent from '@sanity/block-content-to-react';
 
 import Layout from '../components/Layout';
 import { Container } from '../components/Layout/Container';
-
+import { Headline } from '../components/typography/Headline';
 export const query = graphql`
   query($slug: String) {
     sanityPost(slug: { current: { eq: $slug } }) {
@@ -23,11 +23,6 @@ export const query = graphql`
     }
   }
 `;
-const Headline = styled('h1')`
-    ${textStyle}
-    ${textAlign}
-    ${space}
-  `;
 
 const Img = styled(Image)`
   display: block;
