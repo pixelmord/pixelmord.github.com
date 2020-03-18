@@ -25,31 +25,31 @@ export const theme = {
     ...defaultTheme.colors,
     ...colors,
   },
-  textStyles: {
-    ...defaultTheme.textStyles,
+  styles: {
+    ...defaultTheme.styles,
     h1: {
-      ...defaultTheme.textStyles.h1,
-      fontFamily: fonts.headline,
+      ...defaultTheme.styles.h1,
+      fontFamily: fonts.heading,
     },
     h2: {
-      ...defaultTheme.textStyles.h2,
-      fontFamily: fonts.headline,
+      ...defaultTheme.styles.h2,
+      fontFamily: fonts.heading,
     },
     h3: {
-      ...defaultTheme.textStyles.h3,
-      fontFamily: fonts.headline,
+      ...defaultTheme.styles.h3,
+      fontFamily: fonts.heading,
     },
     h4: {
-      ...defaultTheme.textStyles.h4,
-      fontFamily: fonts.headline,
+      ...defaultTheme.styles.h4,
+      fontFamily: fonts.heading,
     },
     h5: {
-      ...defaultTheme.textStyles.h5,
-      fontFamily: fonts.headline,
+      ...defaultTheme.styles.h5,
+      fontFamily: fonts.heading,
     },
     h6: {
-      ...defaultTheme.textStyles.h6,
-      fontFamily: fonts.headline,
+      ...defaultTheme.styles.h6,
+      fontFamily: fonts.heading,
     },
   },
 };

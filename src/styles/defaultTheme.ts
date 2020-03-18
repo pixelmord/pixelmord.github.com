@@ -128,7 +128,25 @@ export const letterSpacings = {
   caps: '0.025em',
 };
 
-export const textStyles = {
+export const styles = {
+  root: {
+    fontFamily: 'body',
+    lineHeight: 'body',
+    fontWeight: 'body',
+    color: 'text',
+    bg: 'background',
+  },
+  p: {
+    color: 'text',
+  },
+  a: {
+    color: 'primary',
+    textDecoration: 'none',
+    ':hover': {
+      color: 'secondary',
+      textDecoration: 'underline',
+    },
+  },
   h6: {
     fontFamily: fonts.heading,
     fontSize: fontSizes[3],
@@ -251,17 +269,6 @@ export const base = {
   speed: '.1s',
 };
 
-export const styles = {
-  root: {
-    fontFamily: 'body',
-    color: 'text',
-    bg: 'background',
-  },
-  p: {
-    color: 'text',
-  },
-};
-
 export interface PrestyledTheme extends Theme {
   name: string;
   [key: string]: string | number | {};
@@ -280,7 +287,6 @@ export const defaultTheme: PrestyledTheme = {
   space,
   base,
   buttons,
-  textStyles,
   styles,
 };
 
