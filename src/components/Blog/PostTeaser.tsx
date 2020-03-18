@@ -73,8 +73,8 @@ export interface IPostTeaserProps {
 }
 export const PostTeaser: React.FC<IPostTeaserProps> = props => {
   const { post } = props;
-  const humanReadableDate = format(new Date(post._createdAt), 'MMMM DD, YYYY');
-  const date = format(new Date(post._createdAt), 'YYYY-MM-DD');
+  const humanReadableDate = format(new Date(post._createdAt), 'MMMM dd, yyyy');
+  const date = format(new Date(post._createdAt), 'yyyy-MM-dd');
   return (
     <Post>
       <Meta dateTime={date}>{humanReadableDate}</Meta>
