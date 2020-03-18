@@ -1,8 +1,8 @@
-import { defaultTheme } from 'prestyled';
+import defaultTheme from './defaultTheme';
+
 export const fonts = {
-  headline: `'Lato', sans-serif`,
-  text: `'Lato', sans-serif`,
-  mono: `Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace`,
+  heading: `'Lato', sans-serif`,
+  body: `'Lato', sans-serif`,
 };
 
 const colors = {

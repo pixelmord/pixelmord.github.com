@@ -1,22 +1,17 @@
 require('dotenv').config();
 
-const config = require('./config')
+const config = require('./config');
 
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
-    siteUrl: config.siteUrl + config.pathPrefix
+    siteUrl: config.siteUrl + config.pathPrefix,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
-      }
-    },
+    'gatsby-plugin-theme-ui',
     {
       resolve: 'gatsby-source-sanity',
       options: {
@@ -24,16 +19,16 @@ module.exports = {
         dataset: process.env.SANITY_DATASET,
         overlayDrafts: true,
         watchMode: true,
-        token: process.env.SANITY_TOKEN
-      }
+        token: process.env.SANITY_TOKEN,
+      },
     },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /\.inline\.svg$/
-        }
-      }
-    }
-  ]
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+  ],
 };
