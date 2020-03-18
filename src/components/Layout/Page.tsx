@@ -1,8 +1,14 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui';
 
-export const Page = ({ sidebarVisible }: { sidebarVisible: boolean }) => (
+export const Page: React.FC<{ sidebarVisible: boolean }> = ({
+  sidebarVisible,
+  ...rest
+}: {
+  sidebarVisible: boolean;
+}) => (
   <Box
+    {...rest}
     bg="white"
     sx={{
       overflow: 'hidden',
