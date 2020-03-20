@@ -271,7 +271,6 @@ export const base = {
 
 export interface PrestyledTheme extends Theme {
   name: string;
-  [key: string]: string | number | {};
 }
 
 export const defaultTheme: PrestyledTheme = {

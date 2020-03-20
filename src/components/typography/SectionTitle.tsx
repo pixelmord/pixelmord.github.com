@@ -1,22 +1,21 @@
-import * as React from 'react';
-import styled, { StyledComponent } from '@emotion/styled';
-import { Theme, Box } from 'prestyled';
+/** @jsx jsx */
+import { jsx, Styled } from 'theme-ui';
 
-export const SectionTitle: StyledComponent<
-  React.PropsWithoutRef<JSX.IntrinsicElements['div']>,
-  {},
-  Theme
-> = styled('h3')`
-  ${props => props.theme.textStyles.h6};
-  letter-spacing: 2px;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  :after {
-    background-color: ${props => props.theme.colors.primary};
-    display: block;
-    content: '';
-    height: 1px;
-    margin-top: 15px;
-    width: 60px;
-  }
-`;
+export const SectionTitle: React.FC = props => (
+  <Styled.h3
+    {...props}
+    sx={{
+      letterSpacing: '2px',
+      marginBottom: '2rem',
+      textTransform: 'uppercase',
+      ':after': {
+        backgroundColor: 'primary',
+        display: 'block',
+        content: '""',
+        height: '1px',
+        marginTop: '15px',
+        width: '60px',
+      },
+    }}
+  />
+);

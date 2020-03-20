@@ -2167,6 +2167,14 @@
     "@theme-ui/css" "^0.3.1"
     deepmerge "^4.2.2"
 
+"@theme-ui/color@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@theme-ui/color/-/color-0.3.1.tgz#fceffc0be305ad6ca6be9755ac9cafc955b1e6f5"
+  integrity sha512-Bgew6etspp087AdrKuMpcWjIQDQ8UTp28wtHCXgi1Ip5ClFn9i91DvaKgqXk9UwQJFL/IwydX8Bks/+u9tf0WA==
+  dependencies:
+    "@theme-ui/css" "^0.3.1"
+    polished "^3.4.1"
+
 "@theme-ui/components@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@theme-ui/components/-/components-0.3.1.tgz#fe023e156c1e1c076d5f2258466426e94adc2765"
@@ -2343,11 +2351,6 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/gray-percentage@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@types/gray-percentage/-/gray-percentage-2.0.0.tgz#263a255aa9d218f3c24fdd3a656732159fd077ca"
-  integrity sha512-yEEubKQ92XA6yB9fTjKihFfb2bx/x/GfUComPMTrF0/0YqVLTFU3q/yqAsOKeYGRYYcCUhG1tdkW5c3uruC7JQ==
-
 "@types/history@*":
   version "4.7.5"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.5.tgz#527d20ef68571a4af02ed74350164e7a67544860"
@@ -2395,13 +2398,6 @@
   version "4.14.149"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.149.tgz#1342d63d948c6062838fbf961012f74d4e638440"
   integrity sha512-ijGqzZt/b7BfzcK9vTrS6MFljQRPn5BFWOx8oE0GYxribu6uV+aA9zZuXI1zc/etK9E8nrgdoF2+LgUw7+9tJQ==
-
-"@types/mdx-js__react@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@types/mdx-js__react/-/mdx-js__react-1.5.1.tgz#3fbd03c083c34564520416202f24447a6197cb6d"
-  integrity sha512-CTt1SJxp5+bh+F3FNlmh7ZQCI4TH+Y68AvknWwo0IfevtN6OT0gkQEoNz4eUZzuNG0mr+21hSvvN38VJ3+GtPw==
-  dependencies:
-    "@types/react" "*"
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -2593,16 +2589,6 @@
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.33.tgz#1073c4bc824754ae3d10cfab88ab0237ba964e4d"
   integrity sha1-EHPEvIJHVK49EM+riKsCN7qWTk0=
-
-"@types/typography-breakpoint-constants@^0.16.0":
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/@types/typography-breakpoint-constants/-/typography-breakpoint-constants-0.16.0.tgz#799e8c0cf1a0e94e70779f593eb8a38029a2f6a9"
-  integrity sha512-2yeLWbpMBCDnAqPam1E0gJWZJBENF1fGXeAVod6Y1dNe3FNdxWn0U8AChby+dB3CJjKzUv00tn28X0Q2z4PMBQ==
-
-"@types/typography@^0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@types/typography/-/typography-0.16.3.tgz#a237ed8b6ffa5d647491d4e681f2f37a87bfbd65"
-  integrity sha512-LC+htrmoMhmFfFYjshxeHzZsKnpwVo9oMmdelRhqISG+ataFPscxnq8XEuCGWcNXQXZYfmIKjgmo1eJ/vs1BQw==
 
 "@types/uglify-js@*":
   version "3.0.4"
@@ -11820,7 +11806,7 @@ pnp-webpack-plugin@^1.6.4:
   dependencies:
     ts-pnp "^1.1.6"
 
-polished@^3.3.1, polished@^3.4.2, polished@^3.4.4:
+polished@^3.3.1, polished@^3.4.1, polished@^3.4.2, polished@^3.4.4:
   version "3.4.4"
   resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.4.tgz#ac8cd6e704887398f3b802718f9d389b9ea4307b"
   integrity sha512-x9PKeExyI9AhWrJP3Q57I1k7GInujjiVBJMPFmycj9hX1yCOo/X9eu9eZwxgOziiXge3WbFQ5XOmkzunOntBSA==

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Styled } from 'theme-ui';
 import 'typeface-lato';
-import 'modern-normalize';
 
 import HtmlHead from '../HtmlHead';
 

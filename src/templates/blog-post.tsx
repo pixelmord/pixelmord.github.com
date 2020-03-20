@@ -1,13 +1,14 @@
+/** @jsx jsx */
+import { jsx, Styled } from 'theme-ui';
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
-import styled from '@emotion/styled';
-import { textAlign, textStyle, space } from 'styled-system';
-import Image from 'gatsby-image';
+
+import Image, { FluidObject } from 'gatsby-image';
 import BlockContent from '@sanity/block-content-to-react';
 
 import Layout from '../components/Layout';
 import { Container } from '../components/Layout/Container';
-import { Headline } from '../components/typography/Headline';
+import { PostTeaserProps } from '../components/Blog/PostTeaser';
 export const query = graphql`
   query($slug: String) {
     sanityPost(slug: { current: { eq: $slug } }) {
@@ -24,27 +25,40 @@ export const query = graphql`
   }
 `;
 
-const Img = styled(Image)`
-  display: block;
-  margin-bottom: 1.66667em;
-  @media screen and (min-width: 800px) {
-    margin-left: calc(360px - 47vw);
-    margin-right: calc(360px - 47vw);
-    max-width: 94vw;
-    width: 94vw;
-  }
-  @media screen and (min-width: 1141px) {
-    margin-left: -180px;
-    margin-right: -180px;
-    max-width: 1080px;
-    width: 1080px;
-  }
-`;
-export default ({ data }: any) => (
+const Img: React.FC<{ alt: string; fluid: FluidObject }> = ({
+  alt,
+  ...props
+}) => (
+  <Image
+    alt={alt}
+    {...props}
+    sx={{
+      display: 'block',
+      marginBottom: '1.66667em',
+      '@media screen and (min-width: 800px)': {
+        marginLeft: 'calc(360px - 47vw)',
+        marginRight: 'calc(360px - 47vw)',
+        maxWidth: '94vw',
+        width: '94vw',
+      },
+      '@media screen and (min-width: 1141px)': {
+        marginLeft: '-180px',
+        marginRight: '-180px',
+        maxWidth: '1080px',
+        width: '1080px',
+      },
+    }}
+  />
+);
+const BlogPost = ({
+  data,
+}: {
+  data: { sanityPost: PostTeaserProps['post'] & { _rawBody: {} } };
+}) => (
   <Layout landingPage={false}>
     <Container>
       <article>
-        <Headline textStyle="h2">{data.sanityPost.title}</Headline>
+        <Styled.h2>{data.sanityPost.title}</Styled.h2>
         {!!data.sanityPost.heroImage.asset && (
           <Img
             fluid={data.sanityPost.heroImage.asset.fluid}
@@ -59,3 +73,4 @@ export default ({ data }: any) => (
     </Container>
   </Layout>
 );
+export default BlogPost;

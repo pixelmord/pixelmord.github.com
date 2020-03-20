@@ -1,74 +1,53 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import * as React from 'react';
-import styled from '@emotion/styled';
-import { ClassNames } from '@emotion/core';
-import { Link as GatsbyLink } from 'gatsby';
-import { withTheme } from 'emotion-theming';
-import { Box, Theme } from 'prestyled';
-
+import { Link, GatsbyLinkProps } from 'gatsby';
+const MenuItem: React.FC = props => (
+  <li
+    {...props}
+    sx={{
+      fontSize: 4,
+      marginRight: 2,
+      paddingRight: 2,
+      ':last-of-type': {
+        borderRight: 'none',
+      },
+    }}
+  />
+);
+const GatsbyLink: React.FC<Omit<GatsbyLinkProps<{}>, 'ref'>> = props => (
+  <Link
+    {...props}
+    activeClassName="active"
+    sx={{
+      display: 'inline-block',
+      textDecoration: 'none',
+      color: 'white',
+      '&.active': {
+        color: 'primaryLightest',
+      },
+    }}
+  />
+);
 export const PageSidebarNavigation: React.FC = props => {
-  const Nav = styled(Box)``.withComponent('nav');
-
-  const Menu = styled(Box)`
-    margin: 0;
-    padding: 0;
-    margin-top: 0.4em;
-    margin-bottom: 0.4em;
-    list-style: none;
-  `.withComponent('ul');
-
-  const MenuItem = styled(Box)`
-    font-size: ${props => props.theme.fontSizes[4]};
-    margin-right: ${props => props.theme.space[2]};
-    padding-right: ${props => props.theme.space[2]};
-    :last-of-type {
-      border-right: none;
-    }
-  `.withComponent('li');
-
-  const LinkTag = styled(GatsbyLink)`
-    display: inline-block;
-    text-decoration: none;
-    color: ${props => props.theme.colors.white};
-    :hover {
-      color: ${props => props.theme.colors.primaryLightest};
-    }
-  `;
-
-  const Link = withTheme(
-    ({
-      children,
-      theme,
-      ...rest
-    }: {
-      to: string;
-      theme?: Theme;
-      children: React.ReactNode;
-    }) => (
-      <ClassNames>
-        {({ css, cx }) => (
-          <LinkTag
-            {...rest}
-            activeClassName={css`
-              color: ${theme.colors.primaryLightest} !important;
-            `}
-          >
-            {children}
-          </LinkTag>
-        )}
-      </ClassNames>
-    )
-  );
-
   return (
-    <Nav aria-label="Primary Navigation">
-      <Menu>
+    <nav aria-label="Primary Navigation">
+      <ul
+        sx={{
+          margin: '0',
+          padding: '0',
+          marginTop: '0.4em',
+          marginBottom: '0.4em',
+          listStyle: 'none',
+        }}
+      >
         <MenuItem>
-          <Link to="/about-andreas-sahle">About me</Link>
+          <GatsbyLink to="/about-andreas-sahle">About me</GatsbyLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/blog">Blog</Link>
+          <GatsbyLink to="/blog">Blog</GatsbyLink>
         </MenuItem>
-      </Menu>
-    </Nav>
+      </ul>
+    </nav>
   );
 };

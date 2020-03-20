@@ -1,81 +1,70 @@
-import * as React from 'react';
-import styled from '@emotion/styled';
-import { ClassNames } from '@emotion/core';
-import { Link as GatsbyLink } from 'gatsby';
-
-import { withTheme } from 'emotion-theming';
-
-import { Flex, Box, Theme } from 'prestyled';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+import { Link, GatsbyLinkProps } from 'gatsby';
 
 export const PageHeaderNavigation: React.FC = props => {
-  const Nav = styled(Flex)`
-    flex: 1 1 auto;
-    display: none;
-    margin-left: 1.5em;
-    @media screen and (min-width: 800px) {
-      display: flex;
-    }
-  `.withComponent('nav');
+  const Nav: React.FC = () => (
+    <nav
+      sx={{
+        flex: '1 1 auto',
+        display: 'none',
+        marginLeft: '1.5em',
+        '@media screen and (min-width: 800px)': {
+          display: 'flex',
+        },
+      }}
+    />
+  );
 
-  const Menu = styled(Flex)`
-    flex: 1 1 auto;
-    margin: 0;
-    padding: 0;
-    margin-top: 0.4em;
-    margin-bottom: 0.4em;
-    list-style: none;
-  `.withComponent('ul');
-
-  const MenuItem = styled(Box)`
-    display: inline-block;
-    font-size: ${props => props.theme.fontSizes[4]};
-    margin-right: ${props => props.theme.space[2]};
-    padding-right: ${props => props.theme.space[2]};
-    :last-of-type {
-      border-right: none;
-    }
-  `.withComponent('li');
-
-  const LinkTag = styled(GatsbyLink)`
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: ${props => props.theme.colors.grayDarkest};
-  `;
-
-  const Link = withTheme(
-    ({
-      children,
-      theme,
-      ...rest
-    }: {
-      to: string;
-      theme?: Theme;
-      children: React.ReactNode;
-    }) => (
-      <ClassNames>
-        {({ css, cx }) => (
-          <LinkTag
-            {...rest}
-            activeClassName={css`
-              color: ${theme.colors.primary} !important;
-            `}
-          >
-            {children}
-          </LinkTag>
-        )}
-      </ClassNames>
-    )
+  const Menu: React.FC = () => (
+    <ul
+      sx={{
+        flex: '1 1 auto',
+        margin: '0',
+        padding: '0',
+        marginTop: '0.4em',
+        marginBottom: '0.4em',
+        listStyle: 'none',
+      }}
+    />
+  );
+  const MenuItem: React.FC = () => (
+    <li
+      sx={{
+        display: 'inline-block',
+        fontSize: 4,
+        marginRight: 2,
+        paddingRight: 2,
+        ':last-of-type': {
+          borderRight: 'none',
+        },
+      }}
+    />
+  );
+  const GatsbyLink: React.FC<Omit<GatsbyLinkProps<{}>, 'ref'>> = props => (
+    <Link
+      {...props}
+      activeClassName="active"
+      sx={{
+        display: 'inline-block',
+        textDecoration: 'none',
+        textTransform: 'uppercase',
+        color: 'grayDarkest',
+        '&.active': {
+          color: 'primary',
+        },
+      }}
+    />
   );
 
   return (
     <Nav aria-label="Primary Navigation">
       <Menu>
         <MenuItem>
-          <Link to="/about-andreas-sahle">About me</Link>
+          <GatsbyLink to="/about-andreas-sahle">About me</GatsbyLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/blog">Blog</Link>
+          <GatsbyLink to="/blog">Blog</GatsbyLink>
         </MenuItem>
       </Menu>
     </Nav>

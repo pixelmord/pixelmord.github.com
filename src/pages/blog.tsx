@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { graphql, Link } from 'gatsby';
-import styled from '@emotion/styled';
-import { textAlign, textStyle, space } from 'styled-system';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import { Container } from '../components/Layout/Container';

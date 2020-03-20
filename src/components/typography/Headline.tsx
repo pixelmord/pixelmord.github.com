@@ -1,9 +1,3 @@
-import * as React from 'react';
-import styled from '@emotion/styled';
-import { textAlign, textStyle, space } from 'styled-system';
-
-export const Headline = styled('h1')`
-  ${textStyle}
-  ${textAlign}
-  ${space}
-`;
+/** @jsx jsx */
+import { jsx, Styled } from 'theme-ui';
+export const Headline: React.FC = props => <Styled.h1 {...props} />;

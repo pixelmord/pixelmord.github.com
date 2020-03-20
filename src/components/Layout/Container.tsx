@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui';
+import { jsx, Box, BoxProps } from 'theme-ui';
 
-export const Container: React.FC = props => (
+export const Container: React.FC<BoxProps> = props => (
   <Box
     {...props}
     mx="auto"

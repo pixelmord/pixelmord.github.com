@@ -1,7 +1,6 @@
-import * as React from 'react';
-import styled from '@emotion/styled';
-import { Box } from 'prestyled';
-import { transparentize } from 'polished';
+/** @jsx jsx */
+import { jsx, Box } from 'theme-ui';
+import { transparentize } from '@theme-ui/color';
 
 import Github from '../gfx/icons/github-brands.inline.svg';
 import Twitter from '../gfx/icons/twitter-brands.inline.svg';
@@ -11,36 +10,43 @@ import Xing from '../gfx/icons/xing-brands.inline.svg';
 import Drupal from '../gfx/icons/icon-w-drupal.inline.svg';
 
 export const SocialLinks: React.FC = props => {
-  const Link = styled('a')`
-    display: inline-block;
-    line-height: 1;
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    background: white;
-    border-radius: 100%;
-    color: ${props => props.theme.colors.text};
-    margin-left: 0.25em;
-    margin-right: 0.25em;
-    margin-bottom: 0.35em;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    :hover,
-    :active,
-    :focus {
-      color: white;
-      background: ${props => props.theme.colors.primary};
-      box-shadow: 0 0 1px 7px
-        ${props => transparentize(0.7, props.theme.colors.primary)};
-      outline: 0;
-    }
-  `;
+  const Link = ({
+    href,
+    ...rest
+  }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    <a
+      {...href}
+      {...rest}
+      sx={{
+        '--box-shadow-color': transparentize('primary', 0.7),
+        display: 'inline-block',
+        lineHeight: 1,
+        width: '40px',
+        height: '40px',
+        padding: '10px',
+        bg: 'white',
+        borderRadius: '100%',
+        color: 'text',
+        mx: '0.25em',
+        mb: '0.35em',
+        textDecoration: 'none',
+        transition: 'all 0.2s ease-in-out',
+        ':hover,:active,:focus': {
+          color: 'white',
+          bg: 'primary',
+          boxShadow: `0 0 1px 7px var(--box-shadow-color)`,
+          outline: 0,
+        },
+      }}
+    />
+  );
   Link.defaultProps = {
     target: '_blank',
     rel: 'noreferrer',
   };
   return (
-    <Box {...props} my={[2, 4]} textAlign="center">
+    <Box {...props} my={[2, 4]} sx={{ textAlign: 'center' }}>
       <Link
         href="https://github.com/pixelmord"
         aria-label="Github user profile pixelmord"

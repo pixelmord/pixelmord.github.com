@@ -1,11 +1,9 @@
+/** @jsx jsx */
+import { jsx, Styled, Box, Flex } from 'theme-ui';
 import * as React from 'react';
-import styled from '@emotion/styled';
-import { textAlign, textStyle, space } from 'styled-system';
-import { Link as GatsbyLink } from 'gatsby';
-import { css } from '@emotion/core';
-import { Box, Flex, Button } from 'prestyled';
+import { Link } from 'gatsby';
 import Particles from 'react-particles-js';
-import { transparentize } from 'polished';
+import { transparentize } from '@theme-ui/color';
 
 import andreassahle from '../gfx/andreas_sahle.png';
 import Hamburger from '../gfx/icons/round-menu-24px.inline.svg';
@@ -20,61 +18,67 @@ export const PageHeader: React.FC<{
   setSidebarVisibility: (visible: boolean) => void;
 }> = props => {
   const { landingPage, sidebarVisible, setSidebarVisibility } = props;
-  const Header = styled(Box)`
-    border-bottom: 1px solid #e5e7e9;
-  `.withComponent('header');
+  const SidebarToggle = (props: {
+    children: JSX.Element;
+    onClick: (e: React.SyntheticEvent) => void;
+    'aria-label': string;
+  }) => (
+    <button
+      {...props}
+      sx={{
+        '--box-shadow-color': transparentize('primary', 0.7),
+        transition: 'box-shadow 0.2s ease-in-out',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        bg: 'primary',
+        borderRadius: '100%',
+        border: 'none',
+        color: 'white',
+        width: '40px',
+        height: '40px',
+        p: 0,
+        ':hover,:active,:focus': {
+          boxShadow: `0 0 1px 7px var(--box-shadow-color)`,
+          outline: '0',
+        },
+      }}
+    />
+  );
 
-  const HeroLead = styled('h2')`
-    ${textStyle}
-    ${textAlign}
-    ${space}
-  `;
-  const HeroHeadline = styled('h1')`
-    ${textStyle}
-    ${textAlign}
-    ${space}
-  `;
-  const Link = styled(GatsbyLink)`
-    display: block;
-    line-height: 1;
-  `;
-  const SidebarToggle = styled(Button)`
-    transition: box-shadow 0.2s ease-in-out;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    :hover,
-    :active,
-    :focus {
-      box-shadow: 0 0 1px 7px
-        ${props => transparentize(0.7, props.theme.colors.primary)};
-      outline: 0;
-    }
-  `;
-  SidebarToggle.defaultProps = {
-    bg: 'primary',
-    borderRadius: '100%',
-    border: 'none',
-    color: 'white',
-    width: 40,
-    height: 40,
-  };
   const toggleSidebar = (e: React.SyntheticEvent) => {
     e.preventDefault();
     setSidebarVisibility(!sidebarVisible);
   };
   return (
-    <Header
+    <Box
       bg="grayLighter"
       mb={[2, 4]}
       px={[2, 3]}
       py={[1, 2]}
-      position="relative"
+      as="header"
+      sx={{
+        borderBottom: '1px solid #e5e7e9',
+        position: 'relative',
+      }}
       {...props}
     >
-      <Flex position="relative" zIndex={1} justifyContent="space-between">
-        <Link to="/" title="Home">
+      <Flex
+        sx={{
+          position: 'relative',
+          zIndex: 1,
+          justifyContent: 'space-between',
+        }}
+      >
+        <Link
+          sx={{
+            display: 'block',
+            lineHeight: '1',
+          }}
+          to="/"
+          title="Home"
+        >
           <Avatar src={andreassahle} alt="Andreas Sahle" size={40} />
         </Link>
         <PageHeaderNavigation />
@@ -87,20 +91,21 @@ export const PageHeader: React.FC<{
           <Particles
             width="100%"
             height="100%"
-            css={css`
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              z-index: 0;
-            `}
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 0,
+            }}
             params={{
               particles: {
                 number: {
                   value: 80,
                   density: {
                     enable: true,
+                    // eslint-disable-next-line @typescript-eslint/camelcase
                     value_area: 700,
                   },
                 },
@@ -114,6 +119,7 @@ export const PageHeader: React.FC<{
                     color: '#000000',
                   },
                   polygon: {
+                    // eslint-disable-next-line @typescript-eslint/camelcase
                     nb_sides: 5,
                   },
                 },
@@ -123,6 +129,7 @@ export const PageHeader: React.FC<{
                   anim: {
                     enable: false,
                     speed: 1,
+                    // eslint-disable-next-line @typescript-eslint/camelcase
                     opacity_min: 0.1,
                     sync: false,
                   },
@@ -133,10 +140,12 @@ export const PageHeader: React.FC<{
                   anim: {
                     enable: false,
                     speed: 40,
+                    // eslint-disable-next-line @typescript-eslint/camelcase
                     size_min: 0.1,
                     sync: false,
                   },
                 },
+                // eslint-disable-next-line @typescript-eslint/camelcase
                 line_linked: {
                   enable: true,
                   distance: 150,
@@ -150,6 +159,7 @@ export const PageHeader: React.FC<{
                   direction: 'none',
                   random: false,
                   straight: false,
+                  // eslint-disable-next-line @typescript-eslint/camelcase
                   out_mode: 'out',
                   bounce: false,
                   attract: {
@@ -160,6 +170,7 @@ export const PageHeader: React.FC<{
                 },
               },
               interactivity: {
+                // eslint-disable-next-line @typescript-eslint/camelcase
                 detect_on: 'canvas',
                 events: {
                   onhover: {
@@ -175,6 +186,7 @@ export const PageHeader: React.FC<{
                 modes: {
                   grab: {
                     distance: 140,
+                    // eslint-disable-next-line @typescript-eslint/camelcase
                     line_linked: {
                       opacity: 1,
                     },
@@ -184,20 +196,22 @@ export const PageHeader: React.FC<{
                     size: 40,
                     duration: 2,
                     opacity: 8,
-                    speed: 3,
                   },
                   repulse: {
                     distance: 200,
                     duration: 0.4,
                   },
                   push: {
+                    // eslint-disable-next-line @typescript-eslint/camelcase
                     particles_nb: 4,
                   },
                   remove: {
+                    // eslint-disable-next-line @typescript-eslint/camelcase
                     particles_nb: 2,
                   },
                 },
               },
+              // eslint-disable-next-line @typescript-eslint/camelcase
               retina_detect: true,
             }}
             style={{
@@ -209,21 +223,21 @@ export const PageHeader: React.FC<{
               zIndex: '0',
             }}
           />
-          <Container mt={5} position="relative">
-            <Box width={130} ml="auto" mr="auto" mb={4}>
+          <Container mt={5} sx={{ position: 'relative' }}>
+            <Box sx={{ width: '130px' }} mx="auto" mb={4}>
               <Avatar src={andreassahle} alt="Andreas Sahle" size={130} />
             </Box>
-            <HeroLead textStyle="h2" textAlign="center" mb={[2]}>
+            <Styled.h2 sx={{ textAlign: 'center', mb: 2 }}>
               Nice to meet you!
-            </HeroLead>
-            <HeroHeadline textStyle="h6" textAlign="center">
-              My name is Andreas Sahle. I'm a lead frontend engineer, tech lead
-              and speaker based in Munich, Germany.
-            </HeroHeadline>
+            </Styled.h2>
+            <Styled.h6 sx={{ textAlign: 'center' }}>
+              My name is Andreas Sahle. I&#39;m a lead frontend engineer, tech
+              lead and speaker based in Munich, Germany.
+            </Styled.h6>
             <SocialLinks />
           </Container>
         </React.Fragment>
       )}
-    </Header>
+    </Box>
   );
 };

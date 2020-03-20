@@ -1,7 +1,8 @@
+/** @jsx jsx */
+import { jsx, Styled } from 'theme-ui';
 import * as React from 'react';
 import Layout from '../components/Layout';
 import { Container } from '../components/Layout/Container';
-import { Headline } from '../components/typography/Headline';
 import { SectionTitle } from '../components/typography/SectionTitle';
 
 const About: React.FC = () => {
@@ -9,10 +10,10 @@ const About: React.FC = () => {
     <Layout landingPage={false}>
       <Container>
         <SectionTitle>My name is Andreas Sahle</SectionTitle>
-        <Headline textStyle="h3">
+        <Styled.h3>
           I&#39;m a lead frontend engineer, tech lead and speaker based in
           Munich, Germany.
-        </Headline>
+        </Styled.h3>
         <p>
           My focus is the development of interfaces for web applications with
           the latest technologies for front-end development, GraphQL and

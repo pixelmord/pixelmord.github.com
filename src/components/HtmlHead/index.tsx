@@ -2,27 +2,23 @@ import * as React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
 import * as config from '../../../config';
-import { withTheme } from 'emotion-theming';
+import theme from '../../gatsby-plugin-theme-ui';
 
-import { Theme } from 'prestyled';
-
-export interface IHtmlHead {
+export interface HtmlHead {
   title?: string;
-  theme?: Theme;
 }
 
-export interface IHead extends IHtmlHead {
+export interface Head extends HtmlHead {
   data: {
     site: { buildTime: string };
   };
 }
-const Head: React.FC<IHead> = (props: IHead) => {
+const Head: React.FC<Head> = props => {
   const {
     data: {
       site: { buildTime },
     },
     title,
-    theme,
   } = props;
 
   const htmlTitle = title ? `${title} | ${config.siteTitle}` : config.siteTitle;
@@ -140,16 +136,6 @@ const Head: React.FC<IHead> = (props: IHead) => {
     </Helmet>
   );
 };
-
-const HtmlHead = (props: IHtmlHead) => (
-  <StaticQuery
-    query={queryHtmlHead}
-    render={data => <Head {...props} data={data} />}
-  />
-);
-
-export default withTheme(HtmlHead);
-
 const queryHtmlHead = graphql`
   query HtmlHead {
     site {
@@ -157,3 +143,11 @@ const queryHtmlHead = graphql`
     }
   }
 `;
+const HtmlHead = (props: HtmlHead) => (
+  <StaticQuery
+    query={queryHtmlHead}
+    render={data => <Head {...props} data={data} />}
+  />
+);
+
+export default HtmlHead;
