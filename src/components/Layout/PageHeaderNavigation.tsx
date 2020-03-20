@@ -3,8 +3,9 @@ import { jsx } from 'theme-ui';
 import { Link, GatsbyLinkProps } from 'gatsby';
 
 export const PageHeaderNavigation: React.FC = props => {
-  const Nav: React.FC = () => (
+  const Nav: React.FC = props => (
     <nav
+      {...props}
       sx={{
         flex: '1 1 auto',
         display: 'none',
@@ -16,8 +17,9 @@ export const PageHeaderNavigation: React.FC = props => {
     />
   );
 
-  const Menu: React.FC = () => (
+  const Menu: React.FC = props => (
     <ul
+      {...props}
       sx={{
         flex: '1 1 auto',
         margin: '0',
@@ -28,8 +30,9 @@ export const PageHeaderNavigation: React.FC = props => {
       }}
     />
   );
-  const MenuItem: React.FC = () => (
+  const MenuItem: React.FC = props => (
     <li
+      {...props}
       sx={{
         display: 'inline-block',
         fontSize: 4,

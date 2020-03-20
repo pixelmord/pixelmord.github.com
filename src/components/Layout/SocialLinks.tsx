@@ -8,45 +8,45 @@ import Instagram from '../gfx/icons/instagram-brands.inline.svg';
 import LinkedIn from '../gfx/icons/linkedin-in-brands.inline.svg';
 import Xing from '../gfx/icons/xing-brands.inline.svg';
 import Drupal from '../gfx/icons/icon-w-drupal.inline.svg';
+const Link = ({
+  href,
+  ...rest
+}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+  // eslint-disable-next-line jsx-a11y/anchor-has-content
+  <a
+    href={href}
+    {...rest}
+    sx={{
+      '--box-shadow-color': transparentize('primary', 0.7),
+      display: 'inline-block',
+      lineHeight: 1,
+      width: '40px',
+      height: '40px',
+      padding: '10px',
+      bg: 'white',
+      borderRadius: '100%',
+      color: 'text',
+      mx: '0.25em',
+      mb: '0.35em',
+      textDecoration: 'none',
+      transition: 'all 0.2s ease-in-out',
+      ':hover,:active,:focus': {
+        color: 'white',
+        bg: 'primary',
+        boxShadow: `0 0 1px 7px var(--box-shadow-color)`,
+        outline: 0,
+      },
+    }}
+  />
+);
+Link.defaultProps = {
+  target: '_blank',
+  rel: 'noreferrer',
+};
 
 export const SocialLinks: React.FC = props => {
-  const Link = ({
-    href,
-    ...rest
-  }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    // eslint-disable-next-line jsx-a11y/anchor-has-content
-    <a
-      {...href}
-      {...rest}
-      sx={{
-        '--box-shadow-color': transparentize('primary', 0.7),
-        display: 'inline-block',
-        lineHeight: 1,
-        width: '40px',
-        height: '40px',
-        padding: '10px',
-        bg: 'white',
-        borderRadius: '100%',
-        color: 'text',
-        mx: '0.25em',
-        mb: '0.35em',
-        textDecoration: 'none',
-        transition: 'all 0.2s ease-in-out',
-        ':hover,:active,:focus': {
-          color: 'white',
-          bg: 'primary',
-          boxShadow: `0 0 1px 7px var(--box-shadow-color)`,
-          outline: 0,
-        },
-      }}
-    />
-  );
-  Link.defaultProps = {
-    target: '_blank',
-    rel: 'noreferrer',
-  };
   return (
-    <Box {...props} my={[2, 4]} sx={{ textAlign: 'center' }}>
+    <Box my={[2, 4]} sx={{ textAlign: 'center' }}>
       <Link
         href="https://github.com/pixelmord"
         aria-label="Github user profile pixelmord"
