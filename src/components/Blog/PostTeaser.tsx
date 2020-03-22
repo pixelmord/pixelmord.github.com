@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Box } from 'theme-ui';
+import { jsx, Box } from 'theme-ui';
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 
