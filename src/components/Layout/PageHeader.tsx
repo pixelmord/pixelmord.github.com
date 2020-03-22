@@ -230,10 +230,16 @@ export const PageHeader: React.FC<{
             <Styled.h2 sx={{ textAlign: 'center', mb: 2 }}>
               Nice to meet you!
             </Styled.h2>
-            <Styled.h6 sx={{ textAlign: 'center' }}>
+            <h1
+              sx={{
+                textAlign: 'center',
+                variant: 'styles.h6',
+                fontWeight: 'regular',
+              }}
+            >
               My name is Andreas Sahle. I&#39;m a lead frontend engineer, tech
               lead and speaker based in Munich, Germany.
-            </Styled.h6>
+            </h1>
             <SocialLinks />
           </Container>
         </React.Fragment>

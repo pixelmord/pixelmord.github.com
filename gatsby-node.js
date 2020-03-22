@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path,
       component: require.resolve('./src/templates/blog-post.tsx'),
-      context: { slug: edge.node.slug.current }
+      context: { slug: edge.node.slug.current },
     });
 
     createPageDependency({ path, nodeId: edge.node.id });

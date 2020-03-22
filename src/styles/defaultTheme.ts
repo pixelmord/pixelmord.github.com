@@ -131,10 +131,11 @@ export const letterSpacings = {
 export const styles = {
   root: {
     fontFamily: 'body',
-    lineHeight: 'body',
-    fontWeight: 'body',
+    lineHeight: 'standard',
+    fontWeight: 'regular',
     color: 'text',
     bg: 'background',
+    boxSizing: 'border-box',
   },
   p: {
     color: 'text',
@@ -156,6 +157,10 @@ export const styles = {
     marginBottom: '0.7em',
     '& + h1, & + h2, & + h3, & + h4, & + h5, & + h6': {
       marginTop: `calc(${fontSizes[3]} * -0.7)`,
+    },
+    '> a': {
+      color: 'inherit',
+      textDecoration: 'none',
     },
   },
   h5: {
@@ -208,6 +213,10 @@ export const styles = {
         marginTop: `calc(${fontSizes[10]} * -0.7)`,
       },
     },
+    a: {
+      color: 'inherit',
+      textDecoration: 'none',
+    },
   },
   h2: {
     fontFamily: fonts.heading,
@@ -224,6 +233,10 @@ export const styles = {
       '& + h1, & + h2, & + h3, & + h4, & + h5, & + h6': {
         marginTop: `calc(${fontSizes[12]} * -0.7)`,
       },
+    },
+    '> a': {
+      color: 'inherit',
+      textDecoration: 'none',
     },
   },
   h1: {

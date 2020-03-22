@@ -42,9 +42,9 @@ export const PostTeaser: React.FC<PostTeaserProps> = props => {
       >
         {humanReadableDate}
       </time>
-      <Styled.h3 sx={{ mb: 1 }}>
+      <h2 sx={{ mb: 1, variant: 'styles.h3' }}>
         <Link to={`/blog/${post.slug.current}`}>{post.title}</Link>
-      </Styled.h3>
+      </h2>
       {!!post.heroImage.asset && (
         <Link
           to={`/blog/${post.slug.current}`}
@@ -75,7 +75,7 @@ export const PostTeaser: React.FC<PostTeaserProps> = props => {
               display: 'inline-block',
               marginRight: '1rem',
               fontSize: '2',
-              color: "'primary'",
+              color: 'primary',
               ':before': {
                 content: "'#'",
               },

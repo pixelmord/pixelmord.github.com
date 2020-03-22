@@ -1,10 +1,13 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
+import { jsx } from 'theme-ui';
 
 export const SectionTitle: React.FC = props => (
-  <Styled.h3
+  // eslint-disable-next-line jsx-a11y/heading-has-content
+  <h3
     {...props}
     sx={{
+      variant: 'styles.h6',
+      fontWeight: 'regular',
       letterSpacing: '2px',
       marginBottom: '2rem',
       textTransform: 'uppercase',
