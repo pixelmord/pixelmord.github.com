@@ -23,7 +23,6 @@
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-typescript": "^2.2.5",
     "gatsby-source-sanity": "^5.0.6",
-    "gh-pages": "^2.2.0",
     "modern-normalize": "^0.6.0",
     "polished": "^3.4.4",
     "prestyled": "^0.5.0",
@@ -47,7 +46,6 @@
     "clean": "gatsby clean",
     "build": "gatsby build",
     "type-check": "tsc",
-    "deploy": "gatsby build && gh-pages -b master -d public",
     "format": "prettier --write '{__mocks__,src,test}/**/*.{js,ts,tsx}' '*.js'",
     "lint": "eslint '{__mocks__,src,test}/**/*.{js,ts,tsx}'",
     "test": "jest"
