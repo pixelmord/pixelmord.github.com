@@ -47,6 +47,19 @@ export const PageSidebarNavigation: React.FC = props => {
         <MenuItem>
           <GatsbyLink to="/blog">Blog</GatsbyLink>
         </MenuItem>
+        <MenuItem>
+          <a
+            href="/knowhow"
+            target="_blank"
+            sx={{
+              display: 'inline-block',
+              textDecoration: 'none',
+              color: 'white',
+            }}
+          >
+            KnowHow
+          </a>
+        </MenuItem>
       </ul>
     </nav>
   );
