@@ -22,8 +22,7 @@ export const PageOverlay: React.FC<{
             right: '0',
             zIndex: '-1',
             visibility: 'hidden',
-            transition:
-              'right .25s ease-in-out, opacity .25s ease-in-out, visibility 0s .25s ease-in-out',
+            transition: 'right .25s ease-in-out, opacity .25s ease-in-out, visibility 0s .25s ease-in-out',
           }
         : {
             opacity: '1',

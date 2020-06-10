@@ -1,13 +1,10 @@
 // tslint:disable: object-literal-sort-keys
 import theme from '@theme-ui/preset-tailwind';
 import { Theme } from 'theme-ui';
-const createMediaQuery = (n: string): string =>
-  `@media screen and (min-width:${n})`;
+const createMediaQuery = (n: string): string => `@media screen and (min-width:${n})`;
 
 const aliases = ['sm', 'md', 'lg', 'xl', 'xxl'];
-const breakpointStrings: string[] = [32, 40, 48, 64, 75].map(
-  (n: number): string => n + 'em'
-);
+const breakpointStrings: string[] = [32, 40, 48, 64, 75].map((n: number): string => n + 'em');
 export const breakpoints: {
   [key: string]: string;
 } = breakpointStrings.reduce(

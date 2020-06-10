@@ -31,10 +31,7 @@ const Layout: React.FC<{ landingPage: boolean }> = props => {
         <PageFooter />
       </Page>
       <PageOverlay sidebarVisible={sidebarVisible} onClick={toggleSidebar} />
-      <PageSidebar
-        sidebarVisible={sidebarVisible}
-        setSidebarVisibility={setSidebarVisibility}
-      />
+      <PageSidebar sidebarVisible={sidebarVisible} setSidebarVisibility={setSidebarVisibility} />
     </Styled.root>
   );
 };

@@ -227,9 +227,7 @@ export const PageHeader: React.FC<{
             <Box sx={{ width: '130px' }} mx="auto" mb={4}>
               <Avatar src={andreassahle} alt="Andreas Sahle" size={130} />
             </Box>
-            <Styled.h2 sx={{ textAlign: 'center', mb: 2 }}>
-              Nice to meet you!
-            </Styled.h2>
+            <Styled.h2 sx={{ textAlign: 'center', mb: 2 }}>Nice to meet you!</Styled.h2>
             <h1
               sx={{
                 textAlign: 'center',
@@ -237,8 +235,8 @@ export const PageHeader: React.FC<{
                 fontWeight: 'regular',
               }}
             >
-              My name is Andreas Sahle. I&#39;m a lead frontend engineer, tech
-              lead and speaker based in Munich, Germany.
+              My name is Andreas Sahle. I&#39;m a lead frontend engineer, tech lead and speaker based in Munich,
+              Germany.
             </h1>
             <SocialLinks />
           </Container>

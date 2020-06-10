@@ -6,9 +6,9 @@ import { graphql, Link } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 import BlockContent from '@sanity/block-content-to-react';
 
-import Layout from '../components/Layout';
-import { Container } from '../components/Layout/Container';
-import { PostTeaserProps } from '../components/Blog/PostTeaser';
+import Layout from '../Layout';
+import { Container } from '../Layout/Container';
+import { PostTeaserProps } from '../Blog/PostTeaser';
 export const query = graphql`
   query($slug: String) {
     sanityPost(slug: { current: { eq: $slug } }) {
@@ -25,10 +25,7 @@ export const query = graphql`
   }
 `;
 
-const Img: React.FC<{ alt: string; fluid: FluidObject }> = ({
-  alt,
-  ...props
-}) => (
+const Img: React.FC<{ alt: string; fluid: FluidObject }> = ({ alt, ...props }) => (
   <Image
     alt={alt}
     {...props}
@@ -97,25 +94,15 @@ const serializers: Serializers = {
     },
   },
 };
-const BlogPost = ({
-  data,
-}: {
-  data: { sanityPost: PostTeaserProps['post'] & { _rawBody: {} } };
-}) => (
+const BlogPost = ({ data }: { data: { sanityPost: PostTeaserProps['post'] & { _rawBody: {} } } }) => (
   <Layout landingPage={false}>
     <Container>
       <article>
         <Styled.h1>{data.sanityPost.title}</Styled.h1>
         {!!data.sanityPost.heroImage.asset && (
-          <Img
-            fluid={data.sanityPost.heroImage.asset.fluid}
-            alt={data.sanityPost.title}
-          />
+          <Img fluid={data.sanityPost.heroImage.asset.fluid} alt={data.sanityPost.title} />
         )}
-        <BlockContent
-          blocks={data.sanityPost._rawBody}
-          serializers={serializers}
-        />
+        <BlockContent blocks={data.sanityPost._rawBody} serializers={serializers} />
         <br />
         {console.log(data.sanityPost._rawBody)}
         <br />
