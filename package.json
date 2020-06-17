@@ -26,13 +26,17 @@
     "modern-normalize": "^0.6.0",
     "polished": "^3.4.4",
     "prestyled": "^0.5.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "react-particles-js": "^2.7.1",
     "styled-system": "^5.1.5",
     "theme-ui": "^0.3.1",
     "typeface-lato": "^0.0.75"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "keywords": [
     "gatsby",
