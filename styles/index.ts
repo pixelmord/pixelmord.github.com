@@ -1,1 +1,4 @@
-export * from './theme';
+import { portfolioBlueTheme } from 'prestyled';
+export default {
+  ...portfolioBlueTheme,
+};

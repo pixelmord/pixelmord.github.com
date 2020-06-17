@@ -6,11 +6,18 @@
   "dependencies": {
     "@theme-ui/color": "^0.3.1",
     "date-fns": "^2.11.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
     "next": "^9.4.2",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.6.1",
     "prestyled": "^0.5.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-particles-js": "^2.7.1",
+    "responsive-loader": "^1.2.0",
+    "sharp": "^0.25.4",
     "theme-ui": "^0.3.1",
     "typeface-lato": "^0.0.75"
   },

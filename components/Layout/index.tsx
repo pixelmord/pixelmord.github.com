@@ -1,8 +1,4 @@
 import * as React from 'react';
-import { Styled } from 'theme-ui';
-import 'typeface-lato';
-
-import HtmlHead from '../HtmlHead';
 
 import { PageOverlay } from './PageOverlay';
 import { Page } from './Page';
@@ -18,8 +14,7 @@ const Layout: React.FC<{ landingPage: boolean }> = props => {
     setSidebarVisibility(!sidebarVisible);
   };
   return (
-    <Styled.root>
-      <HtmlHead />
+    <>
       <Page sidebarVisible={sidebarVisible}>
         <PageHeader
           landingPage={landingPage}
@@ -32,7 +27,7 @@ const Layout: React.FC<{ landingPage: boolean }> = props => {
       </Page>
       <PageOverlay sidebarVisible={sidebarVisible} onClick={toggleSidebar} />
       <PageSidebar sidebarVisible={sidebarVisible} setSidebarVisibility={setSidebarVisibility} />
-    </Styled.root>
+    </>
   );
 };
 

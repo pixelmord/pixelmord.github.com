@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
-import * as config from '../../config';
+import config from '../../config';
 import theme from '../../src/gatsby-plugin-theme-ui';
 
 export interface HtmlHead {

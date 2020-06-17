@@ -1,16 +1,16 @@
 /** @jsx jsx */
 import { jsx, Styled, Box, Flex } from 'theme-ui';
 import * as React from 'react';
-import { Link } from 'gatsby';
 import Particles from 'react-particles-js';
 import { transparentize } from '@theme-ui/color';
 
 import andreassahle from '../gfx/andreas_sahle.png';
-import Hamburger from '../gfx/icons/round-menu-24px.inline.svg';
+import Hamburger from '../gfx/icons/round-menu-24px.inline.svg?include';
 import { Avatar } from './Avatar';
 import { Container } from './Container';
 import { PageHeaderNavigation } from './PageHeaderNavigation';
 import { SocialLinks } from './SocialLinks';
+import NextLink from '~components/NextLink';
 
 export const PageHeader: React.FC<{
   landingPage: boolean;
@@ -71,19 +71,19 @@ export const PageHeader: React.FC<{
           justifyContent: 'space-between',
         }}
       >
-        <Link
+        <NextLink
           sx={{
             display: 'block',
             lineHeight: '1',
           }}
-          to="/"
+          href="/"
           title="Home"
         >
           <Avatar src={andreassahle} alt="Andreas Sahle" size={40} />
-        </Link>
+        </NextLink>
         <PageHeaderNavigation />
         <SidebarToggle onClick={toggleSidebar} aria-label="Show navigation">
-          <Hamburger aria-hidden="true" />
+          <div aria-hidden="true" dangerouslySetInnerHTML={{ __html: Hamburger }} />
         </SidebarToggle>
       </Flex>
       {landingPage === true && (

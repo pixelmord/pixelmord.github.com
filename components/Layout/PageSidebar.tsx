@@ -3,7 +3,7 @@ import { jsx, Button } from 'theme-ui';
 import * as React from 'react';
 import { transparentize } from '@theme-ui/color';
 import { PageSidebarNavigation } from './PageSidebarNavigation';
-import Close from '../gfx/icons/round-close-24px.inline.svg';
+import Close from '../gfx/icons/round-close-24px.inline.svg?include';
 
 const SidebarToggle: React.FC<{
   onClick: (e: React.SyntheticEvent) => void;
@@ -86,7 +86,7 @@ export const PageSidebar: React.FC<{
           }}
         >
           <SidebarToggle onClick={toggleSidebar}>
-            <Close aria-hidden="true" />
+            <div dangerouslySetInnerHTML={{ __html: Close }} aria-hidden="true" />
           </SidebarToggle>
           <PageSidebarNavigation />
         </div>

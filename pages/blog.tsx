@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import { Container } from '../components/Layout/Container';
@@ -22,13 +21,3 @@ const Blog = ({
 );
 
 export default Blog;
-
-export const pageQuery = graphql`
-  query {
-    allSanityPost(sort: { fields: _createdAt }) {
-      nodes {
-        ...PostFragment
-      }
-    }
-  }
-`;

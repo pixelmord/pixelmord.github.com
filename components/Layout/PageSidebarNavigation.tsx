@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import * as React from 'react';
-import { Link, GatsbyLinkProps } from 'gatsby';
+
+import NextNavLink from '~components/NextNavLink';
 const MenuItem: React.FC = props => (
   <li
     {...props}
@@ -15,20 +16,7 @@ const MenuItem: React.FC = props => (
     }}
   />
 );
-const GatsbyLink: React.FC<Omit<GatsbyLinkProps<{}>, 'ref'>> = props => (
-  <Link
-    {...props}
-    activeClassName="active"
-    sx={{
-      display: 'inline-block',
-      textDecoration: 'none',
-      color: 'white',
-      '&.active': {
-        color: 'primaryLightest',
-      },
-    }}
-  />
-);
+
 export const PageSidebarNavigation: React.FC = props => {
   return (
     <nav aria-label="Primary Navigation">
@@ -42,10 +30,10 @@ export const PageSidebarNavigation: React.FC = props => {
         }}
       >
         <MenuItem>
-          <GatsbyLink to="/about-andreas-sahle">About me</GatsbyLink>
+          <NextNavLink href="/about-andreas-sahle">About me</NextNavLink>
         </MenuItem>
         <MenuItem>
-          <GatsbyLink to="/blog">Blog</GatsbyLink>
+          <NextNavLink href="/blog">Blog</NextNavLink>
         </MenuItem>
         <MenuItem>
           <a
