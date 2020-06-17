@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{"1GPU":function(e,t,n){"use strict";n.r(t),n.d(t,"pageQuery",(function(){return i}));var a=n("q1tI"),r=n("VXBa"),l=n("0W8a"),u=n("tkTn"),c=n("GrsC");t.default=function(e){var t=e.data.allSanityPost.nodes;return a.createElement(r.a,{landingPage:!1},a.createElement(l.a,null,a.createElement(c.a,null,"Latest Articles"),t.map((function(e){return a.createElement(u.a,{post:e,key:e._id})}))))};var i="2068329067"}}]);
+//# sourceMappingURL=component---src-pages-blog-tsx-cf4379dd32fc66e351ab.js.map
