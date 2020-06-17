@@ -117,7 +117,6 @@ const BlogPost = ({
           serializers={serializers}
         />
         <br />
-        {console.log(data.sanityPost._rawBody)}
         <br />
         <Link to="/blog">Back to blog overview</Link>
       </article>
