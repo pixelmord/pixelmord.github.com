@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui';
 
 import NextNavLink from '~components/NextNavLink';
 
-const Nav: React.FC = props => (
+const Nav: React.FC = (props) => (
   <nav
     {...props}
     sx={{
@@ -17,7 +17,7 @@ const Nav: React.FC = props => (
   />
 );
 
-const Menu: React.FC = props => (
+const Menu: React.FC = (props) => (
   <ul
     {...props}
     sx={{
@@ -30,7 +30,7 @@ const Menu: React.FC = props => (
     }}
   />
 );
-const MenuItem: React.FC = props => (
+const MenuItem: React.FC = (props) => (
   <li
     {...props}
     sx={{
@@ -44,15 +44,19 @@ const MenuItem: React.FC = props => (
     }}
   />
 );
-export const PageHeaderNavigation: React.FC = props => {
+export const PageHeaderNavigation: React.FC = (props) => {
   return (
     <Nav aria-label="Primary Navigation">
       <Menu>
         <MenuItem>
-          <NextNavLink href="/about-andreas-sahle">About me</NextNavLink>
+          <NextNavLink href="/about-andreas-sahle" passHref={true}>
+            About me
+          </NextNavLink>
         </MenuItem>
         <MenuItem>
-          <NextNavLink href="/blog">Blog</NextNavLink>
+          <NextNavLink href="/blog" passHref={true}>
+            Blog
+          </NextNavLink>
         </MenuItem>
       </Menu>
     </Nav>

@@ -2,13 +2,13 @@
 import { jsx, Styled } from 'theme-ui';
 import * as React from 'react';
 import Layout from '../components/Layout';
-import { Container } from '../components/Layout/Container';
 import { SectionTitle } from '../components/typography/SectionTitle';
+import PageSection from '~components/PageSection';
 
 const About: React.FC = () => {
   return (
     <Layout landingPage={false}>
-      <Container>
+      <PageSection>
         <SectionTitle>My name is Andreas Sahle</SectionTitle>
         <Styled.h3>I&#39;m a lead frontend engineer, tech lead and speaker based in Munich, Germany.</Styled.h3>
         <p>
@@ -26,7 +26,7 @@ const About: React.FC = () => {
           JavaScript fullstack, mobile web, Drupal, UI design, UX design, 3D visualisation and animation, agile
           development methodology, scrum, JIRA
         </p>
-      </Container>
+      </PageSection>
     </Layout>
   );
 };

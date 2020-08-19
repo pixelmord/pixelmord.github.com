@@ -16,7 +16,7 @@ export const PageHeader: React.FC<{
   landingPage: boolean;
   sidebarVisible: boolean;
   setSidebarVisibility: (visible: boolean) => void;
-}> = props => {
+}> = (props) => {
   const { landingPage, sidebarVisible, setSidebarVisibility } = props;
   const SidebarToggle = (props: {
     children: JSX.Element;
@@ -77,6 +77,7 @@ export const PageHeader: React.FC<{
             lineHeight: '1',
           }}
           href="/"
+          passHref={true}
           title="Home"
         >
           <Avatar src={andreassahle} alt="Andreas Sahle" size={40} />
@@ -105,7 +106,6 @@ export const PageHeader: React.FC<{
                   value: 80,
                   density: {
                     enable: true,
-                    // eslint-disable-next-line @typescript-eslint/camelcase
                     value_area: 700,
                   },
                 },
@@ -119,7 +119,6 @@ export const PageHeader: React.FC<{
                     color: '#000000',
                   },
                   polygon: {
-                    // eslint-disable-next-line @typescript-eslint/camelcase
                     nb_sides: 5,
                   },
                 },
@@ -129,7 +128,6 @@ export const PageHeader: React.FC<{
                   anim: {
                     enable: false,
                     speed: 1,
-                    // eslint-disable-next-line @typescript-eslint/camelcase
                     opacity_min: 0.1,
                     sync: false,
                   },
@@ -140,12 +138,10 @@ export const PageHeader: React.FC<{
                   anim: {
                     enable: false,
                     speed: 40,
-                    // eslint-disable-next-line @typescript-eslint/camelcase
                     size_min: 0.1,
                     sync: false,
                   },
                 },
-                // eslint-disable-next-line @typescript-eslint/camelcase
                 line_linked: {
                   enable: true,
                   distance: 150,
@@ -159,7 +155,6 @@ export const PageHeader: React.FC<{
                   direction: 'none',
                   random: false,
                   straight: false,
-                  // eslint-disable-next-line @typescript-eslint/camelcase
                   out_mode: 'out',
                   bounce: false,
                   attract: {
@@ -170,7 +165,6 @@ export const PageHeader: React.FC<{
                 },
               },
               interactivity: {
-                // eslint-disable-next-line @typescript-eslint/camelcase
                 detect_on: 'canvas',
                 events: {
                   onhover: {
@@ -186,7 +180,6 @@ export const PageHeader: React.FC<{
                 modes: {
                   grab: {
                     distance: 140,
-                    // eslint-disable-next-line @typescript-eslint/camelcase
                     line_linked: {
                       opacity: 1,
                     },
@@ -202,16 +195,13 @@ export const PageHeader: React.FC<{
                     duration: 0.4,
                   },
                   push: {
-                    // eslint-disable-next-line @typescript-eslint/camelcase
                     particles_nb: 4,
                   },
                   remove: {
-                    // eslint-disable-next-line @typescript-eslint/camelcase
                     particles_nb: 2,
                   },
                 },
               },
-              // eslint-disable-next-line @typescript-eslint/camelcase
               retina_detect: true,
             }}
             style={{
