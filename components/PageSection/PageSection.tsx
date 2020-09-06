@@ -6,7 +6,7 @@ import { LandingPageSection, LandingPageSectionContent } from 'prestyled';
 export type PageSectionProps = BoxProps;
 
 export const PageSection: React.FC<PageSectionProps> = ({ children, ...rest }: PropsWithChildren<PageSectionProps>) => (
-  <LandingPageSection {...rest} variant="primary">
+  <LandingPageSection {...rest}>
     <LandingPageSectionContent>{children}</LandingPageSectionContent>
   </LandingPageSection>
 );

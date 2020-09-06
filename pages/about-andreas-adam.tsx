@@ -9,7 +9,7 @@ const About: React.FC = () => {
   return (
     <Layout landingPage={false}>
       <PageSection>
-        <SectionTitle>My name is Andreas Sahle</SectionTitle>
+        <SectionTitle>My name is Andreas Adam</SectionTitle>
         <Styled.h3>I&#39;m a lead frontend engineer, tech lead and speaker based in Munich, Germany.</Styled.h3>
         <p>
           My focus is the development of interfaces for web applications with the latest technologies for front-end
