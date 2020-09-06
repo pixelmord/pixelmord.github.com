@@ -25,5 +25,5 @@ draft: true
 
 1. Eier mit Zucker schaumig rühren.
 2. Quark darunter rühren. Rest auch darunter mischen.
-3. Backform fetten und mit Mehl oder Gries bestäuben.
+3. Backform fetten und mit Mehl oder Grie? bestäuben.
 4. Im gut vorgeheizten Ofen bei 180-200° mindestens 1 Stunde auf der untersten Schiene backen, bzw. so lange bis die Oberfläche dunkelbraun ist.
