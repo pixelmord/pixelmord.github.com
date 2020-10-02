@@ -12,7 +12,7 @@
     "next": "^9.5.2",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.6.2",
-    "prestyled": "^0.8.0",
+    "prestyled": "^0.10.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-particles-js": "^3.3.0",
@@ -22,7 +22,7 @@
     "typeface-lato": "^0.0.75"
   },
   "resolutions": {
-    "@babel/core": "7.11.4"
+    "@babel/core": "^7.11.6"
   },
   "keywords": [
     "nextjs",
@@ -94,7 +94,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.11.4",
+    "@babel/core": "^7.11.6",
     "@babel/polyfill": "^7.10.4",
     "@pacote/eslint-config": "^3.0.1",
     "@pacote/eslint-config-jest": "^1.1.0",

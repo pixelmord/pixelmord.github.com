@@ -11,6 +11,7 @@ import { Container } from './Container';
 import { PageHeaderNavigation } from './PageHeaderNavigation';
 import { SocialLinks } from './SocialLinks';
 import NextLink from '~components/NextLink';
+import { Heading } from 'prestyled';
 
 export const PageHeader: React.FC<{
   landingPage: boolean;
@@ -218,16 +219,16 @@ export const PageHeader: React.FC<{
               <Avatar src={andreassahle} alt="Andreas Sahle" size={130} />
             </Box>
             <Styled.h2 sx={{ textAlign: 'center', mb: 2 }}>Nice to meet you!</Styled.h2>
-            <h1
+            <Heading
+              as="h1"
+              variant="h6"
               sx={{
                 textAlign: 'center',
-                variant: 'styles.h6',
-                fontWeight: 'regular',
               }}
             >
               My name is Andreas Sahle. I&#39;m a lead frontend engineer, tech lead and speaker based in Munich,
               Germany.
-            </h1>
+            </Heading>
             <SocialLinks />
           </Container>
         </React.Fragment>
