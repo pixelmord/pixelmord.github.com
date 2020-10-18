@@ -1,6 +1,6 @@
 ---
 title: "Quarkkuchen Elfriede \U0001F370"
-excerpt: Mein Lieblingskuchen
+summary: Mein Lieblingskuchen
 ingredients:
   - 750g Quark 20%
   - 320g Puderzucker
